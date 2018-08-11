@@ -30,10 +30,10 @@ class Popup extends React.Component {
     this.props.stopListening()
 
     if(this.props.transcript === this.props.video.quote){
-      if(this.props.video.title === 'A League of Their Own'){
+      if(this.props.video.title === 'A League of Their Own' || this.props.video.title === 'A Few Good Men'){
         this.props.updatePlayer1()
       }
-      else if (this.props.video.title === 'Back to the Future 2') {
+      else if (this.props.video.title === 'Back to the Future 2' || this.props.video.title === 'Star Wars: The Empire Strikes Back') {
         this.props.updatePlayer2()
       }
     }

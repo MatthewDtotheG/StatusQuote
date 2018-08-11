@@ -10,15 +10,13 @@ class VideoPlayer extends Component {
     {
       title: 'A League of Their Own',
       link: 'https://drive.google.com/uc?id=1PpV-1H3CSrs3ewHuOkEvIQLIWVHctWhH',
-      quote: 'There\'s no crying in baseball',
-      hint: 'baseball',
+      quote: 'there\'s no crying in baseball',
       time: 10
     },
     {
       title: 'Back to the Future 2',
       link: 'https://drive.google.com/uc?id=1cE5TpS70IzZAbaM4T6mD7nUVrSW5pkOM',
-      quote: 'Where we\'re going we don\'t need roads',
-      hint: 'roads',
+      quote: 'where we\'re going we don\'t need roads',
       time: 9
     },
     {
@@ -38,8 +36,7 @@ class VideoPlayer extends Component {
   ],
     index: 0,
     pause: false,
-    firstPause: false,
-    hintClicked: false
+    firstPause: false
 }
 
   next = () => {
@@ -69,35 +66,25 @@ class VideoPlayer extends Component {
     vid.play();
   }
 
-  getPopup = () => {
-    if (this.state.pause){
-      return <Popup pause={this.unPause}/>
-    }
-  }
-
-  hintyClicked = (time) => {
-    this.setState({
-      hintClicked: !this.state.hintClicked
-    })
-
-    console.log('time match', this.state.clips.find((obj) => obj.time == time))
-  }
-
+  // getPopup = () => {
+  //   if (this.state.pause){
+  //     return <Popup pause={this.unPause}/>
+  //   }
+  // }
 
   render() {
     return (
       <div className="Player">
         <video id='vid' onPlay={() => this.props.sendVideo(this.state.clips[this.state.index])} onEnded={this.next}
         onTimeUpdate={this.quoteTime}
+       controls
        autoPlay="autoplay"
        src={this.state.clips[this.state.index].link}
        width="300"
        height="200">
        Sorry, your browser doesn{"'"}t support embedded videos.
         </video>
-        {this.getPopup()}
-        <button onClick={() => this.hintyClicked(this.state.clips[this.state.index].time)} className='hint-btn'>Hint</button>
-        {this.state.hintClicked ? <h1></h1> : console.log('this aint')}
+        {this.state.pause && <Popup pause={this.unPause}/>}
       </div>
     );
   }
