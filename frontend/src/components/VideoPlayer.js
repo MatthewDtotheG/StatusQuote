@@ -1,7 +1,8 @@
 import React, {Component} from 'react'
-
+import Popup from './Popup';
 
 class VideoPlayer extends Component {
+
   state = {
   clips: [
     {
@@ -24,12 +25,13 @@ class VideoPlayer extends Component {
     }
   ],
     index: 0,
-    pause: false
+    pause: false,
+    firstPause: false
 }
 
   next = () => {
     if (this.state.index + 1 < this.state.clips.length) {
-      this.setState({index: this.state.index + 1, pause: false})
+      this.setState({index: this.state.index + 1, firstPause: false})
     } else {
       alert('game ended')
     }
@@ -37,9 +39,21 @@ class VideoPlayer extends Component {
 
   quoteTime = () => {
     let vid = document.getElementById('vid')
-    if(this.state.clips[this.state.index].time <= vid.currentTime && !this.state.pause){
+    if(this.state.clips[this.state.index].time <= vid.currentTime && !this.state.firstPause){
       vid.pause();
-      this.setState({pause: true})
+      this.setState({firstPause: true, pause: true})
+    }
+  }
+
+  unPause = () => {
+    let vid = document.getElementById('vid')
+    this.setState({pause: false})
+    vid.play();
+  }
+
+  getPopup = () => {
+    if (this.state.pause){
+      return <Popup pause={this.unPause}/>
     }
   }
 
@@ -55,7 +69,7 @@ class VideoPlayer extends Component {
        height="200">
        Sorry, your browser doesn{"'"}t support embedded videos.
         </video>
-
+        {this.getPopup()}
       </div>
     );
   }
