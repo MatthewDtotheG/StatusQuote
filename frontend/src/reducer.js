@@ -1,5 +1,6 @@
 const initialStore = {
-  startGame: false
+  startGame: false,
+  
 }
 
 export const reducer = (store = initialStore, action) => {
