@@ -114,7 +114,6 @@ ul {
 .start-btn {
     padding: 10px;
     border-radius: 0px;
-    font-family: 'Press Start 2P', cursive;
     background: #92CD41;
     display: inline-block;
     position: relative;
@@ -125,5 +124,20 @@ ul {
     font-family: 'Press Start 2P', cursive;
     text-decoration: none;
     color: white;
-
+  }
+  .hint-btn {
+    z-index: 9999;
+    position: absolute;
+    padding: 10px;
+    border-radius: 0px;
+    background: #92CD41;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    font-size: 20px;
+    width: 280px;
+    padding: 0px;
+    font-family: 'Press Start 2P', cursive;
+    text-decoration: none;
+    color: white;
   }
