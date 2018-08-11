@@ -2,6 +2,30 @@
   text-align: center;
 }
 
+.Player{
+  color: white;
+}
+
+h2 {
+  color: white;
+}
+
+.popup{
+  margin-top: 10%;
+  text-align: center;
+  width: 100%;
+}
+
+.player1{
+  margin: 40px;
+  margin-left: 60px;
+}
+
+.player2{
+  margin: 40px;
+  margin-right: 60px;
+}
+
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
