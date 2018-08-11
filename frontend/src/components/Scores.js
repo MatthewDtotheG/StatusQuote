@@ -7,7 +7,7 @@ class Scores extends React.Component {
   }
   render () {
     return (
-      <div style={{position: 'absolute', width: '100%'}}>
+      <div className="player-container" style={{position: 'absolute', width: '100%'}}>
         <ul>
           <li style={{float: 'left'}}>
             <div className="player1">

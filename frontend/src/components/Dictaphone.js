@@ -10,7 +10,7 @@ const propTypes = {
 }
 
 class Dictaphone extends Component {
-  
+
   state = {
     record: false
   }
