@@ -62,11 +62,9 @@ class VideoPlayer extends Component {
       <div className="Player">
         <video id='vid' onEnded={this.next}
         onTimeUpdate={this.quoteTime}
-       controls
-       autoPlay="autoplay"
-       src={this.state.clips[this.state.index].link}
-       width="300"
-       height="200">
+        autoPlay="autoplay"
+        src={this.state.clips[this.state.index].link}
+        >
        Sorry, your browser doesn{"'"}t support embedded videos.
         </video>
         {this.getPopup()}
