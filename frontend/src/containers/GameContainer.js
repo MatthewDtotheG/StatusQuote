@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import VideoPlayer from '../components/VideoPlayer'
+import Scores from '../components/Scores'
 
 class GameContainer extends Component {
 
@@ -7,6 +8,7 @@ class GameContainer extends Component {
     return (
       <div id="game-container">
         <VideoPlayer />
+        <Scores />
       </div>
     )
   }

@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
 import Popup from './Popup';
+import {connect} from 'react-redux'
+import {sendVideo} from '../actions.js'
 
 class VideoPlayer extends Component {
 
@@ -31,7 +33,12 @@ class VideoPlayer extends Component {
 
   next = () => {
     if (this.state.index + 1 < this.state.clips.length) {
-      this.setState({index: this.state.index + 1, firstPause: false})
+      this.setState((prevState) => {
+        return {
+          index: prevState.index + 1,
+          firstPause: false
+        }
+      })
     } else {
       alert('game ended')
     }
@@ -59,8 +66,8 @@ class VideoPlayer extends Component {
 
   render() {
     return (
-      <div className={this.state.pause ? "shadowed" : "Player"}>
-        <video id='vid' onEnded={this.next}
+      <div className="Player">
+        <video id='vid' onPlay={() => this.props.sendVideo(this.state.clips[this.state.index])} onEnded={this.next}
         onTimeUpdate={this.quoteTime}
        controls
        autoPlay="autoplay"
@@ -75,4 +82,10 @@ class VideoPlayer extends Component {
   }
 }
 
-export default VideoPlayer;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    sendVideo: (video) => dispatch(sendVideo(video))
+  }
+}
+
+export default connect(null, mapDispatchToProps)(VideoPlayer);

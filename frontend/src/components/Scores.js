@@ -1,10 +1,8 @@
 import React from 'react'
+import {connect} from 'react-redux'
 
 class Scores extends React.Component {
-  state = {
-    player1: 0,
-    player2: 0
-  }
+
   render () {
     return (
       <div className="player-container" style={{position: 'absolute', width: '100%'}}>
@@ -12,13 +10,13 @@ class Scores extends React.Component {
           <li style={{float: 'left'}}>
             <div className="player1">
               <h2>P1</h2>
-              <h2>{this.state.player1}</h2>
+              <h2>{this.props.player1}</h2>
             </div>
           </li>
           <li style={{float: 'right'}}>
             <div className="player2">
               <h2>P2</h2>
-              <h2>{this.state.player2}</h2>
+              <h2>{this.props.player2}</h2>
             </div>
           </li>
         </ul>
@@ -27,4 +25,11 @@ class Scores extends React.Component {
   }
 }
 
-export default Scores;
+const mapStateToProps = (store) => {
+  return {
+    player1: store.player1,
+    player2: store.player2
+  }
+}
+
+export default connect(mapStateToProps)(Scores);
