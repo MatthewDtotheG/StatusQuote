@@ -33,7 +33,7 @@ class Popup extends React.Component {
     return (
       <div className='popup' style={{position: 'absolute'}}>
         <h1>Guess the line</h1>
-        <h1>time left: {this.state.time}</h1>
+        <h2>time left: {this.state.time}</h2>
         <h3>{this.props.transcript}</h3>
         <button onClick={this.props.resetTranscript}>Re-Record</button>
       </div>
