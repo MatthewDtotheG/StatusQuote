@@ -4,7 +4,10 @@ import {connect} from 'react-redux'
 
 const PlayerSelection = (props) => {
   return (
-    <div>
+    <div id="player-selection">
+      <h1>Status Quote</h1>
+      <p>Select Number of Players: <select><option>2</option></select></p>
+      <br/>
       <button onClick={props.handleClick}>Start Game</button>
     </div>
   )
