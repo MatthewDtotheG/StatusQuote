@@ -1,14 +1,25 @@
 body {
   font-family: 'Press Start 2P', cursive;
 }
+* {
+  color: white;
+}
 
-.Player{
+#content-selection {
+  background-color: rgba(55,55,55,0.9);
+  width: 75%;
+  margin: auto;
+  padding-top: 15px;
+  padding-bottom: 40px;
+  margin-top: 15%;
+}
+/* .Player{
   color: white;
 }
 
 h2 {
   color: white;
-}
+} */
 
 .popup{
   margin-top: 10%;
