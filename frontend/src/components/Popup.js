@@ -21,7 +21,7 @@ class Popup extends React.Component {
     return (
       <div className='popup' style={{position: 'absolute'}}>
         <h1>Guess the line</h1>
-        <h3>time left: {this.state.time}</h3>
+        <h1>time left: {this.state.time}</h1>
       </div>
     )
   }

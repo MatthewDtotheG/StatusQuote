@@ -5,9 +5,8 @@
   "dependencies": {
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-
     "react-redux": "^5.0.7",
-    "react-speech-recognition": "^1.0.7"
+    "react-speech-recognition": "^1.0.7",
     "react-scripts": "1.1.4",
     "redux": "^4.0.0"
   },
