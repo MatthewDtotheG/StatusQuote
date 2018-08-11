@@ -19,11 +19,13 @@ h2 {
 .player1{
   margin: 40px;
   margin-left: 60px;
+  font-size: 25px;
 }
 
 .player2{
   margin: 40px;
   margin-right: 60px;
+  font-size: 25px;
 }
 
 .App-logo {
@@ -67,6 +69,7 @@ ul {
   -o-background-size: cover;
   background-size: cover;
 }
+
 .start-btn {
     font-family: 'Press Start 2P', cursive;
     background: #92CD41;
