@@ -1,9 +1,12 @@
 import React, {Component} from 'react'
+import VideoPlayer from '../components/VideoPlayer'
 
 class GameContainer extends Component {
   render(){
     return (
-      <div>This is the GameContainer</div>
+      <div id="game-container">
+        <VideoPlayer />
+      </div>
     )
   }
 }
