@@ -14,6 +14,35 @@ body {
   padding-bottom: 40px;
   margin-top: 15%;
 }
+<<<<<<< HEAD
+=======
+/* .Player{
+  color: white;
+}
+
+.title {
+  margin-top: 15%;
+}
+*/
+
+/* h2 {
+  font-size: 40px;
+} */
+>>>>>>> 305eee8e80731e5210c289952508ca87d8e22a93
+
+
+
+h1{
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+video {
+  background-color: black;
+}
 
 .popup{
   margin-top: 10%;
