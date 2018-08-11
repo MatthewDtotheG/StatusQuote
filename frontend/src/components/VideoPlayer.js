@@ -77,7 +77,6 @@ class VideoPlayer extends Component {
       <div className="Player">
         <video id='vid' onPlay={() => this.props.sendVideo(this.state.clips[this.state.index])} onEnded={this.next}
         onTimeUpdate={this.quoteTime}
-       controls
        autoPlay="autoplay"
        src={this.state.clips[this.state.index].link}
        width="300"
