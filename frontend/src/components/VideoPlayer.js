@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import Popup from './Popup';
+import EndGame from './EndGame'
 
 class VideoPlayer extends Component {
 
@@ -32,14 +33,15 @@ class VideoPlayer extends Component {
   ],
     index: 0,
     pause: false,
-    firstPause: false
+    firstPause: false,
+    end: false
 }
 
   next = () => {
     if (this.state.index + 1 < this.state.clips.length) {
       this.setState({index: this.state.index + 1, firstPause: false})
     } else {
-      alert('game ended')
+      this.setState({end: true})
     }
   }
 
@@ -64,6 +66,9 @@ class VideoPlayer extends Component {
   }
 
   render() {
+    if (this.state.end){
+      return <EndGame/>
+    }
     return (
       <div className="Player">
         <video id='vid' onEnded={this.next}
