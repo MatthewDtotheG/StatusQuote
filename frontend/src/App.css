@@ -21,10 +21,25 @@ body {
 .title {
   margin-top: 15%;
 }
+*/
+
+/* h2 {
+  font-size: 40px;
+} */
+
+
+
+h1{
+  font-size: 40px;
+}
 
 h2 {
-  color: white;
-} */
+  font-size: 30px;
+}
+
+video {
+  background-color: black;
+}
 
 .popup{
   margin-top: 10%;
