@@ -22,14 +22,14 @@ class VideoPlayer extends Component {
     {
       title: 'A Few Good Men',
       link: 'https://drive.google.com/uc?id=11_00hlcxRkB_wcgfvJ1rN50noaHN7YIN',
-      quote: 'You can\'t handle the truth',
+      quote: 'you can\'t handle the truth',
       hint: 'truth',
       time: 5
     },
     {
       title: 'Star Wars: The Empire Strikes Back',
       link: 'https://drive.google.com/uc?id=1QEBSxyChMLigatKLYerrfj4b-6jFxCoI',
-      quote: 'Try not Do or do not There is no try',
+      quote: 'try not do or do not there is no try',
       hint: 'Try',
       time: 8
     }
