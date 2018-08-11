@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
 import Popup from './Popup';
+import {connect} from 'react-redux'
+import {sendVideo} from '../actions.js'
 
 class VideoPlayer extends Component {
 
@@ -42,7 +44,12 @@ class VideoPlayer extends Component {
 
   next = () => {
     if (this.state.index + 1 < this.state.clips.length) {
-      this.setState({index: this.state.index + 1, firstPause: false})
+      this.setState((prevState) => {
+        return {
+          index: prevState.index + 1,
+          firstPause: false
+        }
+      })
     } else {
       alert('game ended')
     }
@@ -80,11 +87,12 @@ class VideoPlayer extends Component {
   render() {
     return (
       <div className="Player">
-        <video id='vid' onEnded={this.next}
+        <video id='vid' onPlay={() => this.props.sendVideo(this.state.clips[this.state.index])} onEnded={this.next}
         onTimeUpdate={this.quoteTime}
-        autoPlay="autoplay"
-        src={this.state.clips[this.state.index].link}
-        >
+       autoPlay="autoplay"
+       src={this.state.clips[this.state.index].link}
+       width="300"
+       height="200">
        Sorry, your browser doesn{"'"}t support embedded videos.
         </video>
         {this.getPopup()}
@@ -95,4 +103,10 @@ class VideoPlayer extends Component {
   }
 }
 
-export default VideoPlayer;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    sendVideo: (video) => dispatch(sendVideo(video))
+  }
+}
+
+export default connect(null, mapDispatchToProps)(VideoPlayer);
