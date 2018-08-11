@@ -1,5 +1,6 @@
 body {
   font-family: 'Press Start 2P', cursive;
+  color: white;
 }
 * {
   color: white;
@@ -13,13 +14,35 @@ body {
   padding-bottom: 40px;
   margin-top: 15%;
 }
+<<<<<<< HEAD
+=======
 /* .Player{
   color: white;
 }
 
-h2 {
-  color: white;
+.title {
+  margin-top: 15%;
+}
+*/
+
+/* h2 {
+  font-size: 40px;
 } */
+>>>>>>> 305eee8e80731e5210c289952508ca87d8e22a93
+
+
+
+h1{
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+video {
+  background-color: black;
+}
 
 .popup{
   margin-top: 10%;
@@ -81,16 +104,26 @@ ul {
   background-size: cover;
 }
 
+.start-btn:hover{
+  color: #92CD41;
+  background: white;
+  transition: .5s;
+  cursor: pointer;
+}
+
 .start-btn {
+    padding: 10px;
+    border-radius: 0px;
     font-family: 'Press Start 2P', cursive;
     background: #92CD41;
     display: inline-block;
     position: relative;
     text-align: center;
     font-size: 20px;
+    width: 280px;
     padding: 0px;
     font-family: 'Press Start 2P', cursive;
     text-decoration: none;
     color: white;
-    box-shadow: inset (-4px) (-4px) 0px 0px #4AA52E;
+
   }
