@@ -18,10 +18,16 @@ class VideoPlayer extends Component {
       time: 9
     },
     {
-      title: 'Sup',
-      link: 'https://drive.google.com/uc?id=1PpV-1H3CSrs3ewHuOkEvIQLIWVHctWhH',
-      quote: 'There\'s no crying in baseball',
-      time: 10
+      title: 'A Few Good Men',
+      link: 'https://drive.google.com/uc?id=11_00hlcxRkB_wcgfvJ1rN50noaHN7YIN',
+      quote: 'You can\'t handle the truth',
+      time: 5
+    },
+    {
+      title: 'Star Wars: The Empire Strikes Back',
+      link: 'https://drive.google.com/uc?id=1QEBSxyChMLigatKLYerrfj4b-6jFxCoI',
+      quote: 'Try not Do or do not There is no try',
+      time: 8
     }
   ],
     index: 0,
