@@ -35,7 +35,7 @@ class Popup extends React.Component {
         <h1>Guess the line</h1>
         <h1>time left: {this.state.time}</h1>
         <h3>{this.props.transcript}</h3>
-        <button onClick={this.props.resetTranscript}>Re-Record</button>
+        <button className='start-btn' onClick={this.props.resetTranscript}>Re-Record</button>
       </div>
     )
   }

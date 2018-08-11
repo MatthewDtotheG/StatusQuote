@@ -32,8 +32,8 @@ class Dictaphone extends Component {
 
     return (
       <div>
-        <button onClick={startListening}>Record</button>
-        <button onClick={stopListening}>Stop</button>
+        <button className='start-btn' onClick={startListening}>Record</button>
+        <button className='start-btn' onClick={stopListening}>Stop</button>
         <span>{transcript}</span>
       </div>
     )
