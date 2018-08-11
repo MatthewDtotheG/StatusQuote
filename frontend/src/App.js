@@ -5,6 +5,11 @@ import PlayerSelection from './components/PlayerSelection'
 import {connect} from 'react-redux'
 
 class App extends Component {
+
+  componentDidMount(){
+    navigator.mediaDevices.getUserMedia({audio: true})
+  }
+
   render() {
     return (
       <React.Fragment>

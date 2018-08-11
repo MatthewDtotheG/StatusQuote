@@ -8,19 +8,19 @@ class VideoPlayer extends Component {
     {
       title: 'A League of Their Own',
       link: 'https://drive.google.com/uc?id=1PpV-1H3CSrs3ewHuOkEvIQLIWVHctWhH',
-      quote: 'There\'s no crying in baseball',
+      quote: 'there\'s no crying in baseball',
       time: 10
     },
     {
       title: 'Back to the Future 2',
       link: 'https://drive.google.com/uc?id=1cE5TpS70IzZAbaM4T6mD7nUVrSW5pkOM',
-      quote: 'Where we\'re going we don\'t need roads',
+      quote: 'where we\'re going we don\'t need roads',
       time: 9
     },
     {
       title: 'Sup',
       link: 'https://drive.google.com/uc?id=1PpV-1H3CSrs3ewHuOkEvIQLIWVHctWhH',
-      quote: 'There\'s no crying in baseball',
+      quote: 'there\'s no crying in baseball',
       time: 10
     }
   ],
@@ -51,23 +51,25 @@ class VideoPlayer extends Component {
     vid.play();
   }
 
-  getPopup = () => {
-    if (this.state.pause){
-      return <Popup pause={this.unPause}/>
-    }
-  }
+  // getPopup = () => {
+  //   if (this.state.pause){
+  //     return <Popup pause={this.unPause}/>
+  //   }
+  // }
 
   render() {
     return (
-      <div className="Player">
+      <div className={this.state.pause ? "shadowed" : "Player"}>
         <video id='vid' onEnded={this.next}
         onTimeUpdate={this.quoteTime}
-        autoPlay="autoplay"
-        src={this.state.clips[this.state.index].link}
-        >
+       controls
+       autoPlay="autoplay"
+       src={this.state.clips[this.state.index].link}
+       width="300"
+       height="200">
        Sorry, your browser doesn{"'"}t support embedded videos.
         </video>
-        {this.getPopup()}
+        {this.state.pause && <Popup pause={this.unPause}/>}
       </div>
     );
   }
