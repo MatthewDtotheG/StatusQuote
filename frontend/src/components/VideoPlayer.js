@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import Popup from './Popup';
 import {connect} from 'react-redux'
 import {sendVideo} from '../actions.js'
+import EndGame from './EndGame'
 
 class VideoPlayer extends Component {
 
@@ -36,7 +37,8 @@ class VideoPlayer extends Component {
   ],
     index: 0,
     pause: false,
-    firstPause: false
+    firstPause: false,
+    end: false
 }
 
   next = () => {
@@ -48,7 +50,7 @@ class VideoPlayer extends Component {
         }
       })
     } else {
-      alert('game ended')
+      this.setState({end: true})
     }
   }
 
@@ -73,10 +75,14 @@ class VideoPlayer extends Component {
   // }
 
   render() {
+    if (this.state.end){
+      return <EndGame/>
+    }
     return (
       <div className="Player">
         <video id='vid' onPlay={() => this.props.sendVideo(this.state.clips[this.state.index])} onEnded={this.next}
         onTimeUpdate={this.quoteTime}
+
        autoPlay="autoplay"
        src={this.state.clips[this.state.index].link}
        width="300"
