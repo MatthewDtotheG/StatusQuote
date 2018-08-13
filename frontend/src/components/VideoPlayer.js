@@ -68,12 +68,24 @@ class VideoPlayer extends Component {
     vid.play();
   }
 
-  // getPopup = () => {
-  //   if (this.state.pause){
-  //     return <Popup pause={this.unPause}/>
-  //   }
-  // }
+  getPopup = () => {
+    if (this.state.pause){
+      return <Popup pause={this.unPause}/>
+    }
+  }
 
+  hintyClicked = (time) => {
+    this.setState({
+      hintClicked: !this.state.hintClicked
+    })
+
+    let match = this.state.clips.find((obj) => obj.time == time);
+    return <h1 className='hintmatch'>match.hint</h1>
+  }
+
+
+  // <button onClick={() => this.hintyClicked(this.state.clips[this.state.index].time)} className='hint-btn'>Hint</button>
+  // {this.state.hintClicked ? <h1>{match}</h1> : console.log('this aint')}
   render() {
     if (this.state.end){
       return <EndGame/>
@@ -89,6 +101,7 @@ class VideoPlayer extends Component {
        height="200">
        Sorry, your browser doesn{"'"}t support embedded videos.
         </video>
+        {this.getPopup()}
         {this.state.pause && <Popup pause={this.unPause}/>}
       </div>
     );

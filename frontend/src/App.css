@@ -17,7 +17,7 @@ body {
 
 #end-game {
   background-color: rgba(55,55,55,0.9);
-  width: 80%;
+  width: 50%;
   margin: auto;
   margin-top: 10px;
   padding-top: 10px;
@@ -102,6 +102,11 @@ ul {
   background: white;
   transition: .5s;
   cursor: pointer;
+}
+.hintmatch {
+  position: absolute;
+  color: white;
+  z-index: 99999;
 }
 
 .start-btn {
