@@ -110,6 +110,11 @@ ul {
   transition: .5s;
   cursor: pointer;
 }
+.hintmatch {
+  position: absolute;
+  color: white;
+  z-index: 99999;
+}
 
 .start-btn {
     padding: 10px;

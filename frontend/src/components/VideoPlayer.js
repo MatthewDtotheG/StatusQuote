@@ -80,10 +80,12 @@ class VideoPlayer extends Component {
       hintClicked: !this.state.hintClicked
     })
 
-    console.log('time match', this.state.clips.find((obj) => obj.time == time))
+    let match = this.state.clips.find((obj) => obj.time == time);
+    return <h1 className='hintmatch'>match.hint</h1>
   }
 
-
+  // <button onClick={() => this.hintyClicked(this.state.clips[this.state.index].time)} className='hint-btn'>Hint</button>
+  // {this.state.hintClicked ? <h1>{match}</h1> : console.log('this aint')}
   render() {
     return (
       <div className="Player">
@@ -96,8 +98,6 @@ class VideoPlayer extends Component {
        Sorry, your browser doesn{"'"}t support embedded videos.
         </video>
         {this.getPopup()}
-        <button onClick={() => this.hintyClicked(this.state.clips[this.state.index].time)} className='hint-btn'>Hint</button>
-        {this.state.hintClicked ? <h1></h1> : console.log('this aint')}
       </div>
     );
   }
