@@ -45,8 +45,8 @@ class Popup extends React.Component {
       <div className='popup' style={{position: 'absolute'}}>
         <h1>Guess the line</h1>
         <h2>time left: {this.state.time}</h2>
-        <h3>{this.props.transcript}</h3>
         <button className='start-btn' onClick={this.props.resetTranscript}>Re-Record</button>
+        <h3>{this.props.transcript}</h3>
       </div>
     )
   }
